@@ -46,7 +46,8 @@ jobs:
       uses: actions/upload-artifact@v2
       with:
         name: awesome-calculator
-        path: src/dist    
+        path: src/dist
+  
   download:
     runs-on: ubuntu-latest
     strategy:
@@ -56,7 +57,7 @@ jobs:
       - name: download the whl file
         uses: actions/download-artifact@v2
         with:
-          python-version: 3.7
+          name: awesome-calculator
       - name: Install Artifact
         run: |
           pip install src/dist/dedreira_awesomecalculator-1.0.0-py3-none-any.whl
