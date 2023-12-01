@@ -1,11 +1,7 @@
 name: Pylint
 
 on:
-  workflow_run:
-    workflows: ["install_artifact"]
-    types:
-      - completed
-
+ [push]
 
 jobs:
   build:
