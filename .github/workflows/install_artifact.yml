@@ -54,6 +54,8 @@ jobs:
       matrix:
         python-version: ["3.8"]
     steps:
+      - name: Checkout 
+        uses: actions/checkout@v3
       - name: download the whl file
         uses: actions/download-artifact@v3
       - name: Install Artifact
