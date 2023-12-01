@@ -1,6 +1,11 @@
 name: Pylint
 
-on: [push]
+on:
+  workflow_run:
+    workflows: ["Pylint"]
+    types:
+      - completed
+
 
 jobs:
   build:
@@ -21,9 +26,9 @@ jobs:
     - name: Download Artifact
       uses: actions/download-artifact@v2
       with:
-        name: dedreira_awesomecalculator_whl.whl
+        name: dedreira_awesomecalculator-1.0.0-py3-none-any.whl
         path: src/dist
 
     - name: Install Artifact
       run: |
-          pip install src/dist/dedreira_awesomecalculator_whl.whl
+          pip install src/dist/dedreira_awesomecalculator-1.0.0-py3-none-any.whl
