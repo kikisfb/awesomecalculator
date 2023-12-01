@@ -55,9 +55,7 @@ jobs:
         python-version: ["3.8"]
     steps:
       - name: download the whl file
-        uses: actions/download-artifact@v2
-        with:
-          name: awesome-calculator
+        uses: actions/download-artifact@v3
       - name: Install Artifact
         run: |
           pip install src/dist/dedreira_awesomecalculator-1.0.0-py3-none-any.whl
